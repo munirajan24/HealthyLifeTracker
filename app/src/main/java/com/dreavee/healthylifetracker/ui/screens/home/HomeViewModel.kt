@@ -3,7 +3,7 @@ package com.dreavee.healthylifetracker.ui.screens.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dreavee.healthylifetracker.data.local.entity.WaterSource
-import com.dreavee.healthylifetracker.data.repository.SettingsRepository
+import com.dreavee.healthylifetracker.domain.repository.SettingsRepository
 import com.dreavee.healthylifetracker.data.repository.WaterRepository
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -30,10 +30,10 @@ class HomeViewModel(
         viewModelScope.launch {
             combine(
                 waterRepository.getTotalForToday(),
-                settingsRepository.getSettings()
+                settingsRepository.observeSettings()
             ) { total, settings ->
                 val waterTotal = total ?: 0
-                val goal = settings.waterGoalMl
+                val goal = settings.waterDailyGoalMl
                 HomeUiState(
                     waterTotalMl = waterTotal,
                     waterGoalMl = goal,

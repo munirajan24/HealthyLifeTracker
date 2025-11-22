@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.dreavee.healthylifetracker.feature.settings.ui
 
 import androidx.compose.foundation.layout.*
