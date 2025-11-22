@@ -18,6 +18,7 @@ import com.dreavee.healthylifetracker.ui.screens.history.HistoryScreen
 import com.dreavee.healthylifetracker.ui.screens.home.HomeScreen
 import com.dreavee.healthylifetracker.ui.screens.reminders.RemindersScreen
 import com.dreavee.healthylifetracker.ui.screens.settings.SettingsScreen
+import com.dreavee.healthylifetracker.feature.settings.ui.SettingsScreen as NewSettingsScreen
 import com.dreavee.healthylifetracker.ui.theme.HealthyLifeTrackerTheme
 
 class MainActivity : ComponentActivity() {
@@ -68,7 +69,7 @@ fun MainScreen() {
             composable(Screen.Home.route) { HomeScreen() }
             composable(Screen.History.route) { HistoryScreen() }
             composable(Screen.Reminders.route) { RemindersScreen() }
-            composable(Screen.Settings.route) { SettingsScreen() }
+            composable(Screen.Settings.route) { NewSettingsScreen() }
         }
     }
 }

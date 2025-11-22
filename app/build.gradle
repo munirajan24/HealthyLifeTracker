@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.ksp)
-
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.0"
 }
 
 android {
@@ -87,6 +87,9 @@ dependencies {
     // Lifecycle & ViewModel
     implementation libs.androidx.lifecycle.viewmodel.ktx
     implementation libs.androidx.lifecycle.viewmodel.compose
+
+    // Serialization
+    implementation libs.kotlinx.serialization.json
 
 
     // Charts
